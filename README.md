@@ -36,11 +36,11 @@ Implement a circuit that returns |01> and |10> with equal probability.
 ---
 ## Ideal Circuit ##
 ![bell state](media/bell_state.png)  
-- The Bell State can be created by the follwing steps:
-![hadamard](media/hadamard.png)
-- Applying `H Gate` to Qubit 0, and `X Gate` to qubit 1.
-![cnot](media/cnot.png)  
-- Applying CNOT gate to the combination  
+- The Bell State can be created by the follwing steps:  
+![hadamard](media/hadamard.png)  
+- Applying `H Gate` to Qubit 0, and `X Gate` to qubit 1.  
+![cnot](media/cnot.png)    
+- Applying CNOT gate to the combination   
 
 The ideal circuit is as follows:
 ![Ideal](media/ideal_circuit.png)
