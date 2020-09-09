@@ -101,7 +101,7 @@ class BellStateCircuit:
         Parameters:
         -----------
         shots           : The total number of shots for which the quantum experiment will run
-        angle_degrees   : The angle in degrees, that the parameterized gate will be rotated by initially
+        angle_degrees   : The angle in degrees, that the parameterized gate will be rotated by
         '''
         self.angle_degrees = angle_degrees
         self.parameter = Parameter('param1')

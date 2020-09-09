@@ -53,25 +53,25 @@ The ideal circuit is as follows:
 ![architecture](media/architecture.png)
 ---
 ## Data Encoding ##
-1. Input data is the paramter theta, in degrees, which is the angle by which the paraterized gate will rotate.
+1. Input data is the parameter `angle_degrees`, in degrees, which is the angle by which the paraterized gate will rotate.
 2. The angle is converted to `radians` from `degrees`.
 3. Data is mapped before execution using `parameter_binds` of the `qiskit.execute` function in `qpower_app.py`.
 ---
 ## Parameterized Circuit ##
-- The parameterized circuit is created using the `qiskit.ry` gate, that takes `theta` as the input parameter. 
-- Qubit 0 is initialized to statevector [1,0], and Qubit 1 to [0,1] for simplicity, and easy approach towards the said bell state.
+- The parameterized circuit is created using the `qiskit.ry` gate, that takes `angle_degrees` as the input parameter. 
+- Qubit 0 is initialized to statevector [1,0], and Qubit 1 to [0,1] to be able to reach the aforementioned Bell State.  
 ---
 ## Cost Function ##
 ### Mean Squared Error 
 - The Cost function is a simple MSE function that can easily be used with the first order derivative optimizers like Gradient Descent very easily.
-- The cost function is the squared difference of the Probability averages of both states `01` and `10`, that are obtained after the circuit is executed for a given number of `shots`.
+- The cost function is the squared difference of the Probability averages of both states `|01>` and `|10>`, that are obtained after the circuit is executed for a given number of `shots`.   
 ![MSE](media/mse_cost_function.png)
 ---
 ## Optimizers ##
 ### Gradient Descent
 - The Gradient Descent Optimizer is being used as it simplifies the process of loss convergence when our loss function is quadratic in nature.
 - The local and global minima are the same and the `loss landscape` can be easily analysed with much less compute power, and good accuracy.
-- The parameter `theta` is being learned, using Gradient Descent and alpha is the `learning_rate`.  
+- The parameter `angle_degrees` is being learned, using Gradient Descent and alpha is the `learning_rate`.  
 ![gd](media/gradient_descent.png)
 
 ### NAG(Nesterov Accelerated Gradient)
@@ -89,9 +89,10 @@ The ideal circuit is as follows:
 How to make sure you produce state `|01> + |10>` and not `|01> - |10>` ?
 
 - To prevent the occurrence of the state `|01> - |10>`, we will have to alter our cost function to be unsymmetrical. To alter the Mean Sqared error, we can remove the squares and keep the function linear.
-- This can be done by the follwing:
+- This can be done by the following:  
   `prob_avg_10 - (prob_avg_01+prob_avg_10)/(2)`
 ---
 ## Future Scope ##
 - Use of better Optimizer functions like `NAG(Nesterov Accelerated Gradient)`
-- Hessian based analysis of the Loss Landscapes
+- `Hessian` based analysis of the Loss Landscapes
+- etc.
