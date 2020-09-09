@@ -8,6 +8,7 @@
 
 ## Table of contents
 - [Problem Statement](#problem-statement)
+- [Instructions to Run Program](#instructions-to-run-program)
 - [Ideal Circuit](#ideal-circuit)
 - [Solution Architecture](#solution-architecture)
 - [Data Encoding](#data-encoding)
@@ -33,6 +34,10 @@ Implement a circuit that returns |01> and |10> with equal probability.
 
 - Compare the results for different numbers of measurements: 1, 10, 100, 1000. 
 
+---
+## Instructions to Run Program ##
+1. Install `qiskit`
+2. Execute `python main.py`
 ---
 ## Ideal Circuit ##
 ![bell state](media/bell_state.png)  
