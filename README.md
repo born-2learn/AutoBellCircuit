@@ -42,7 +42,7 @@ Implement a circuit that returns |01> and |10> with equal probability.
 ![cnot](media/cnot.png)    
 - Applying CNOT gate to the combination   
 
-The ideal circuit is as follows:
+The ideal circuit is as follows:   
 ![Ideal](media/ideal_circuit.png)
 ---
 ## Solution Architecture
